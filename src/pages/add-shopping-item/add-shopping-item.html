@@ -1,0 +1,51 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+
+    <ion-title>
+      Ajouter un article
+    </ion-title>
+
+    <ion-buttons end>
+      <button ion-button block clear (click)="showHelp()">
+        <ion-icon name="help">
+        </ion-icon>
+      </button>
+    </ion-buttons>
+
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+
+  <ion-item>
+    <ion-label>Nom :</ion-label>
+    <ion-input [(ngModel)]="item.name" placeholder="NomDuProduit"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Quantité :</ion-label>
+    <ion-input [(ngModel)]="item.quantity" type="number" placeholder="1"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Prix (en €) :</ion-label>
+    <ion-input [(ngModel)]="item.price" type="number" placeholder="10"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Catégorie :</ion-label>
+    <ion-select [(ngModel)]="item.category" okText="Valider" cancelText="Annuler">
+      <ion-option>Nourriture</ion-option>
+      <ion-option>Électroménager</ion-option>
+      <ion-option>High-tech</ion-option>
+      <ion-option>Cadeaux</ion-option>
+    </ion-select>
+  </ion-item>
+
+  <!--{{item | json}}-->
+
+  <button ion-button block clear (click)="addItem(item)">Ajouter</button>
+
+</ion-content>

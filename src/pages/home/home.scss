@@ -1,3 +1,15 @@
 page-home {
-
+    h1.titre { /** gros titre */
+        font-family: serif;         /* On se permet un changement de police : pas plus de deux par page, et à utiliser avec parcimonie (c'est le cas) */
+        background: #0066CC none;   /* Fond du titre bleu (et sans image de fond) */
+        color: white;               /*  Donc on utilise une police blanche pour que le texte soit visible */
+        border: 3px dotted #9999FF; /* On encadre le titre d'un bleu clair de 3 pixels de largeur */
+        padding: 0.3em;             /* Espacement intérieur non nul pour que le texte ne colle pas à la bordure du cadre */
+        text-align: center;         /* Le titre doit être centré ! */
+        letter-spacing: 0.3em;      /* On espace les caractères pour que ce soit joli :-) */
+    }
+    h1.titre2 { /** Les titres de paragraphes */
+        text-decoration: underline; /* On souligne ces titres */
+        color: #000077;             /* Texte de couleur bleu très foncé, presque noir (donc lisible) */
+    }
 }

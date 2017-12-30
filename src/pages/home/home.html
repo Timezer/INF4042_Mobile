@@ -1,14 +1,31 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="primary">
     <ion-title>
-      Ionic Blank
+      Liste d'achat
     </ion-title>
+
+    <ion-buttons end>
+      <button navPush="AddShoppingItemPage" ion-button>
+        <ion-icon name="add">
+        </ion-icon>
+      </button>
+      <button ion-button block clear (click)="showHelp()">
+        <ion-icon name="help">
+        </ion-icon>
+      </button>
+    </ion-buttons>
+
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <h1 class="titre" style="text-align:center;">Articles</h1>
+  <ion-list>
+    <ion-item *ngFor="let item of shoppingList$ | async" detail-push navPush="EditShoppingItemPage" [navParams]="{item: item}">
+      <h1 class="titre2">{{item.name}} :</h1>
+      Quantité : {{item.quantity}}
+      <br> Prix : {{item.price}}€
+      <br> Catégorie : {{item.category}}
+    </ion-item>
+  </ion-list>
 </ion-content>
